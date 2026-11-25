@@ -1,11 +1,11 @@
 
 {
-  "id": "/Tieudoan177_Trungdoan282/",
-  "name": "Phòng Hồ Chí Minh - Tiểu đoàn 177 - Trung đoàn 282",
-  "short_name": "Tiểu đoàn 2",
-  "description": "Ứng dụng Phòng Hồ Chí Minh - Tiểu đoàn 177 - Trung đoàn 282",
-  "start_url": "/Tieudoan177_Trungdoan282/",
-  "scope": "/Tieudoan177_Trungdoan282/",
+  "id": "/Tieudoanphonghoa23_Quankhu1/",
+  "name": "Phòng Hồ Chí Minh - Tieudoanphonghoa23_Quankhu1,
+  "short_name": "Tieudoanphonghoa23_Quankhu1",
+  "description": "Ứng dụng Phòng Hồ Chí Minh - Tieudoanphonghoa23_Quankhu1",
+  "start_url": "/Tieudoanphonghoa23_Quankhu1/",
+  "scope": "/Tieudoanphonghoa23_Quankhu1/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
