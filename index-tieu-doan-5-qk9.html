@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#062b60">
+<title>Phòng Hồ Chí Minh - Tiểu đoàn 5 | Trung đoàn 20</title>
+<style>
+:root{
+ --navy:#041d49;--blue:#0754a6;--cyan:#16c9ff;--gold:#ffd34e;
+ --ink:#102d55;--muted:#637995;--panel:#062c61;--line:#2ca9ff;
+ --shadow:0 0 10px #12aaffaa,0 0 26px #0875d655,inset 0 0 12px #2ab8ff22;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#fff;background:#031b43 url("nen-qk9.jpg") center/cover fixed no-repeat;background-color:#031b43;font-size:14px}
+button{font:inherit;cursor:pointer}
+.topbar{height:76px;position:absolute;z-index:5;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:8px 25px;background:linear-gradient(90deg,#031a49dd,#063c83aa 55%,#031a49cc);border-bottom:1px solid #49caff88;box-shadow:0 4px 18px #00163888}
+.brand{display:flex;align-items:center;gap:13px;min-width:0}
+.logo{width:56px;height:56px;flex-shrink:0;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fff8d5,#f7a900 60%,#8d2600);box-shadow:0 0 0 3px #ffffff22,0 0 18px #ffbd22}
+.logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.logo-mark{font-size:34px;line-height:1;color:#a51c13;text-shadow:0 2px 1px #fff}
+.brand-small{font-size:12px;font-weight:900;letter-spacing:2px;color:#fff}
+.brand-name{font-size:22px;font-weight:900;line-height:1.1;color:#ffdf58;text-shadow:0 2px 4px #00122e;letter-spacing:.3px}
+.slogan{font-family:Georgia,serif;font-style:italic;font-size:11px;color:#fff;text-shadow:0 1px 4px #00152f;margin-top:4px}
+.top-right{display:flex;align-items:center;gap:14px}
+.datetime{font-weight:700;white-space:nowrap;padding:9px 14px;border:1px solid #54caff;border-radius:24px;background:#063a78cc;box-shadow:0 0 12px #14baff66}
+.user{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;padding:5px 10px;border:1px solid #3caeff88;border-radius:28px;background:#063a78bb}
+.avatar{width:40px;height:40px;border-radius:50%;border:2px solid var(--gold);background:#dce8f7;display:grid;place-items:center;font-size:22px}
+.user-name{font-weight:800}.user-role{font-size:10px;color:#d9edff;margin-top:2px}
+.hero{height:244px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(90deg,#041d49aa,#075a9c33 45%,#041d49aa),url("banner-qk9.jpg") center 48%/cover no-repeat,#0875b6;padding:75px 20px 12px}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#001b3d44 0%,transparent 55%,#001c48aa 100%)}
+.hero:after{content:"";position:absolute;bottom:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#ffb900,#fff4a5,#00cfff,#ffb900);box-shadow:0 0 15px #24caff}
+.hero-copy{display:block;position:relative;z-index:1;text-shadow:0 3px 6px #001b3c}
+.hero h1{font-size:clamp(22px,3vw,36px);letter-spacing:1px;margin:0 0 6px;font-weight:900;color:#ffe16b}
+.hero p{font-size:15px;font-weight:800;margin:0}
+.hero-left,.hero-right{position:absolute;z-index:1;top:50%;transform:translateY(-50%);font-size:42px;filter:drop-shadow(0 2px 5px #001b3c)}
+.hero-left{left:4%;color:#ffe05a}.hero-right{right:4%;color:#fff}
+.layout{display:grid;grid-template-columns:205px minmax(0,1fr);min-height:calc(100vh - 244px);background:linear-gradient(120deg,#031b45dd,#052b5ddd)}
+.sidebar{background:linear-gradient(180deg,#05275feF,#031b45f2);border-right:1px solid #28baff88;padding:12px 9px;color:#fff;display:flex;flex-direction:column;gap:5px;box-shadow:inset -5px 0 18px #008cff22}
+.nav-item{text-decoration:none;border:1px solid transparent;color:#f4f8ff;background:transparent;text-align:left;padding:10px 9px;border-radius:24px;display:flex;align-items:center;gap:10px;font-weight:700;transition:.2s;min-height:43px}
+.nav-item:hover,.nav-item.active{background:linear-gradient(100deg,#ffb321,#ff7a00 55%,#9d3d00);border-color:#ffe38a;box-shadow:0 0 14px #ffae27,inset 0 0 8px #fff7}
+.nav-icon{width:31px;height:31px;flex:0 0 31px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#37d5ff,#0754c5 70%);border:1px solid #8beaff;box-shadow:0 0 9px #16baff;font-size:17px}
+.nav-arrow{margin-left:auto;color:#b8eaff}
+.side-sep{height:1px;background:#ffffff35;margin:9px 5px}
+.side-note{margin-top:auto;min-height:155px;text-align:center;padding:16px 8px 12px;color:#ffdf59;font-family:Georgia,serif;font-style:italic;font-weight:bold;font-size:15px;line-height:1.4;border:1px solid #2abaff88;border-radius:16px;background:linear-gradient(180deg,#073b78a8,#073b7830),url("anh-chien-si-qk9.jpg") center bottom/cover no-repeat;text-shadow:0 2px 4px #00244d;box-shadow:var(--shadow)}
+.main{padding:13px 14px 20px;min-width:0}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:13px;align-items:center}
+.stat{border-radius:50%;aspect-ratio:1/1;max-width:170px;width:100%;justify-self:center;padding:12px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center;box-shadow:0 0 12px #14baff,0 0 26px #0875d688,inset 0 0 15px #ffffff44;border:2px solid #65dcff;background:radial-gradient(circle at 35% 25%,#168ce9,#05265e 72%);position:relative}
+.stat:before{content:"";position:absolute;inset:5px;border:1px solid #ffffff77;border-radius:50%;pointer-events:none}
+.stat:nth-child(2){background:radial-gradient(circle at 35% 25%,#1bdc82,#034d39 72%);border-color:#6dffb0;box-shadow:0 0 13px #15e78d,0 0 26px #00aa7755}
+.stat:nth-child(3){background:radial-gradient(circle at 35% 25%,#ffc33e,#8d3900 72%);border-color:#ffe18a;box-shadow:0 0 13px #ffba20,0 0 26px #ff8b0055}
+.stat:nth-child(4){background:radial-gradient(circle at 35% 25%,#bd63ff,#371078 72%);border-color:#e5b1ff;box-shadow:0 0 13px #c86bff,0 0 26px #8a35ff66}
+.stat-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:50%;color:white;font-size:24px;flex-shrink:0;text-shadow:0 2px 4px #001}
+.stat-label{font-weight:800;color:#fff;font-size:12px;text-shadow:0 1px 3px #001}.stat-number{font-size:25px;font-weight:900;line-height:1.1;color:#fff;text-shadow:0 2px 5px #001}.stat-number.unavailable{font-size:13px}.stat-sub{font-size:10px;margin-top:2px;color:#e6f7ff}
+.stats:before{content:"★";grid-column:3;grid-row:1;justify-self:center;align-self:center;width:min(100%,170px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-size:72px;color:#ffdb47;text-shadow:0 0 5px #fff,0 0 15px #ffb000,0 0 30px #ff8c00;background:radial-gradient(circle,#ffdf6d 0 25%,#a52a00 27% 58%,#ffd44a 61% 65%,#072b66 70%);border:3px solid #ffe89a;box-shadow:0 0 22px #ffb000,0 0 38px #0bdcff}
+.stats .stat:nth-child(1){grid-column:1}.stats .stat:nth-child(2){grid-column:2}.stats .stat:nth-child(3){grid-column:4}.stats .stat:nth-child(4){grid-column:5}
+.content-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.9fr);gap:12px}
+.panel{background:linear-gradient(145deg,#073c7deF,#041f50f5);border:1px solid #36c5ff;border-radius:18px;box-shadow:var(--shadow);padding:12px;min-width:0;color:#fff}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.panel-title{font-size:16px;font-weight:900;color:#fff;display:flex;align-items:center;gap:9px;text-shadow:0 1px 3px #001}
+.panel-title>span:first-child{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#ffdf65,#a64b00);border:1px solid #fff0a6;box-shadow:0 0 10px #ffb000}
+.more{color:#dff7ff;text-decoration:none;border:1px solid #55caff88;border-radius:18px;background:#06336f;padding:5px 10px;font-weight:800;font-size:11px;white-space:nowrap}
+.more:hover{background:#087bd0}
+.news-layout{display:grid;grid-template-columns:1.15fr .95fr;gap:10px}
+.feature-news{min-width:0;background:#eaf5ff;border:1px solid #75d5ff;border-radius:13px;padding:6px;color:#17365d;box-shadow:0 0 12px #00aaff55}
+.feature-image{height:165px;border-radius:9px;background:linear-gradient(135deg,#153f68,#327eaa);display:grid;place-items:center;color:#fff;text-align:center;padding:15px;position:relative;overflow:hidden;background-size:cover;background-position:center;text-decoration:none;cursor:pointer}
+.feature-image:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent,#001d4266)}
+.feature-image span,.feature-image small{position:relative}.feature-image span{font-size:46px}.feature-image small{display:block;font-weight:700;line-height:1.4}
+.feature-news h3{font-size:14px;line-height:1.4;margin:8px 2px 5px;color:#172d4b}
+.meta{font-size:11px;color:#718096;display:flex;gap:10px;flex-wrap:wrap;margin:0 2px 3px}
+.feature-news h3 a,.news-item h4 a{color:inherit;text-decoration:none}.feature-news h3 a:hover,.news-item h4 a:hover{color:#0755a5}
+.news-list{display:flex;flex-direction:column;gap:8px}
+.news-item{display:grid;grid-template-columns:82px minmax(0,1fr);gap:8px;align-items:center;background:#eaf5ff;border:1px solid #79d7ff;border-radius:10px;padding:5px;color:#18395e}
+.thumb{height:62px;border-radius:7px;background:linear-gradient(135deg,#287c9e,#0a3f71);display:grid;place-items:center;color:white;font-size:25px;background-size:cover;background-position:center;text-decoration:none;cursor:pointer}
+.news-item h4{font-size:12px;line-height:1.35;margin:0 0 4px;color:#233b5b}
+.calendar .panel-head{margin-bottom:10px}
+.month-controls{display:flex;align-items:center;gap:5px}.month-controls button{border:1px solid #52caff;background:#064184;border-radius:50%;width:27px;height:27px;color:#fff;font-weight:900}
+.month-name{font-weight:900;color:#fff;text-align:center;margin-bottom:8px}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.day-name{background:#0754a5;padding:7px 2px;border-radius:16px;border:1px solid #299dff;font-weight:800;color:#fff;font-size:11px}
+.day{padding:7px 2px;border-radius:50%;background:#08417f;color:#fff;font-size:12px;border:1px solid #1478c9;min-height:30px}
+.day.muted{color:#8ca9c8;background:#062b58}.day.today{background:linear-gradient(145deg,#fff0a1,#ff9200);color:#4b2200;font-weight:900;box-shadow:0 0 13px #ffb000;border:1px solid #fff2a1}.day.event{position:relative}.day.event:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#27e58a;bottom:2px;left:calc(50% - 2px)}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:9px;font-size:10px;color:#d6ecff}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
+.bottom-grid{display:grid;grid-template-columns:1.1fr 1.1fr 1fr;gap:12px;margin-top:12px}
+.library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.lib-item{display:block;text-decoration:none;color:inherit;border-radius:13px;padding:9px 5px;text-align:center;background:linear-gradient(145deg,#0a65b5,#052c67);border:1px solid #52caff;min-width:0;box-shadow:0 0 9px #008bff66}
+.lib-item:nth-child(2){background:linear-gradient(145deg,#087ed1,#063c80)}.lib-item:nth-child(3){background:linear-gradient(145deg,#10a66a,#075137)}.lib-item:nth-child(4){background:linear-gradient(145deg,#914de0,#35106f)}
+.lib-icon{font-size:26px;margin-bottom:5px}.lib-item strong{display:block;font-size:11px;line-height:1.3;color:#fff}
+.chart{height:140px;display:flex;align-items:flex-end;justify-content:space-around;padding:12px 4px 0;border-bottom:1px solid #54caff;background:repeating-linear-gradient(to bottom,transparent 0 31px,#ffffff20 32px)}
+#homeResultChart{height:155px;align-items:stretch;gap:8px;padding:10px 5px 0}
+.bar-wrap{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:5px;flex:1;min-width:0}
+#homeResultChart .bar-value{font-size:12px;font-weight:800;color:#fff;white-space:nowrap}
+.bar{width:19px;border-radius:5px 5px 0 0;background:#2474d2;min-height:5px}#homeResultChart .bar{width:min(34px,65%);min-height:0;transition:height .4s ease}
+.bar-label{font-size:10px;color:#d8edff;text-align:center}#homeResultChart .bar-label{font-size:10px;font-weight:700;line-height:1.3;min-height:26px}
+.chart-legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px;font-size:10px;color:#d8edff}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.quick{text-decoration:none;border:1px solid #7bdfff;border-radius:14px;padding:10px 8px;background:linear-gradient(120deg,#dff6ff,#70c9f2);color:#08345d;font-weight:800;display:flex;align-items:center;gap:7px;text-align:left;font-size:12px;box-shadow:0 0 9px #1abaff66}
+.quick:nth-child(2){background:linear-gradient(120deg,#d9ffe7,#57d994);color:#07502e}.quick:nth-child(3){background:linear-gradient(120deg,#fff0c7,#ffad39);color:#713900}.quick:nth-child(4){background:linear-gradient(120deg,#f0dcff,#b78aff);color:#39106e}.quick span{font-size:22px}
+.footer{text-align:center;color:#ffdf58;font-size:13px;font-weight:900;padding:17px 5px 4px;text-shadow:0 2px 4px #001;letter-spacing:.4px}
+.music-control{position:fixed;bottom:16px;right:16px;z-index:9999;background:linear-gradient(120deg,#fff3c2,#ffbf39);padding:10px 15px;border-radius:25px;box-shadow:0 0 13px #ffb000;border:1px solid #fff0a1;font-size:14px;font-weight:900;color:#573000}
+.music-control:hover{transform:translateY(-2px)}
+@media(max-width:1100px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.stats:before{display:none}.stats .stat:nth-child(n){grid-column:auto}.content-grid{grid-template-columns:1fr}.bottom-grid{grid-template-columns:1fr 1fr}.bottom-grid .panel:last-child{grid-column:1/-1}}
+@media(max-width:700px){
+ .topbar{height:auto;min-height:68px;padding:8px 10px;position:relative}.logo{width:43px;height:43px}.logo-mark{font-size:27px}.brand-name{font-size:15px}.brand-small{font-size:9px}.slogan{font-size:9px}.top-right .datetime{display:none}.user-name{font-size:11px}.user-role{font-size:9px}.avatar{width:33px;height:33px}
+ .hero{height:145px;padding:10px}.hero h1{font-size:22px}.hero p{font-size:11px}.hero-left,.hero-right{font-size:24px}
+ .layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:7px;border-right:0;border-bottom:1px solid #28baff}.nav-item{padding:6px 3px;justify-content:center;flex-direction:column;gap:3px;text-align:center;font-size:9px;min-height:58px}.nav-icon{width:27px;height:27px;flex-basis:27px;font-size:15px}.nav-arrow,.side-sep,.side-note{display:none}
+ .main{padding:9px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{max-width:145px}.content-grid{gap:9px}.news-layout{grid-template-columns:1fr}.feature-image{height:145px}.news-list{display:grid;grid-template-columns:1fr 1fr}.news-item{grid-template-columns:55px minmax(0,1fr);gap:5px}.thumb{height:52px}.news-item h4{font-size:10px}.bottom-grid{grid-template-columns:1fr}.bottom-grid .panel:last-child{grid-column:auto}.panel{padding:9px}.panel-title{font-size:14px}.library-grid{gap:5px}.lib-item{padding:8px 3px}.lib-item strong{font-size:10px}.quick{font-size:10px;padding:8px 5px}
+}
+@media(max-width:390px){.brand-name{font-size:13px}.user{gap:4px;padding:4px}.user-name{max-width:65px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.stats{grid-template-columns:1fr 1fr}.news-list{grid-template-columns:1fr}.calendar-grid{gap:2px}.day{padding:6px 1px}#homeResultChart{gap:3px;padding-left:1px;padding-right:1px}#homeResultChart .bar-label{font-size:9px}#homeResultChart .bar-value{font-size:10px}}
+</style>
+</head>
+<body>
+<audio id="backgroundMusic" loop><source src="nhacnen.mp3" type="audio/mpeg"></audio>
+<button class="music-control" id="musicButton" onclick="toggleMusic()">▶️ Bật nhạc</button>
+
+<header class="topbar">
+ <div class="brand">
+  <div aria-label="Biểu trưng đơn vị" class="logo"><span class="logo-mark">★</span></div>
+  <div>
+   <div class="brand-small">TIỂU ĐOÀN 5</div>
+   <div class="brand-name">TRUNG ĐOÀN 20 · SƯ ĐOÀN 330</div>
+   <div class="slogan">QUÂN KHU 9 · Học tập Bác – Rèn luyện bản thân – Xây dựng đơn vị vững mạnh</div>
+  </div>
+ </div>
+ <div class="top-right">
+  <div class="datetime" id="datetime">📅 Đang cập nhật...</div>
+  <a href="quantri.html" class="user"><div class="avatar">🪖</div><div><div class="user-name">Đăng nhập</div><div class="user-role">Quản trị hệ thống</div></div><span>⌄</span></a>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="hero-left">★</div>
+ <div class="hero-copy">
+  <h1>TIỂU ĐOÀN 5 – TRUNG ĐOÀN 20</h1>
+  <p>SƯ ĐOÀN 330 · QUÂN KHU 9</p>
+ </div>
+ <div class="hero-right">✦</div>
+</section>
+
+<div class="layout">
+<aside aria-label="Điều hướng chính" class="sidebar">
+ <a class="nav-item active" href="index.html"><span class="nav-icon">⌂</span>Trang chủ</a>
+ <a class="nav-item" href="thuvien.html"><span class="nav-icon">▣</span>Thư viện điện tử<span class="nav-arrow">›</span></a>
+ <a class="nav-item" href="kehoach.html"><span class="nav-icon">▦</span>Kế hoạch hoạt động<span class="nav-arrow">›</span></a>
+ <a class="nav-item" href="hinhanhvideo.html"><span class="nav-icon">▧</span>Hình ảnh - Video<span class="nav-arrow">›</span></a>
+ <a class="nav-item" href="tuyentruyen.html"><span class="nav-icon">⚑</span>Tuyên truyền, giáo dục<span class="nav-arrow">›</span></a>
+ <a class="nav-item" href="loibachongayxua.html"><span class="nav-icon">📜</span>Lời Bác Hồ dạy ngày này năm xưa<span class="nav-arrow">›</span></a>
+ <a class="nav-item" href="truyenthannoibo.html"><span class="nav-icon">📻</span>Truyền thanh nội bộ<span class="nav-arrow">›</span></a>
+ <a class="nav-item" href="thongke.html"><span class="nav-icon">▥</span>Thống kê - Báo cáo<span class="nav-arrow">›</span></a>
+ <a class="nav-item" href="quantri.html"><span class="nav-icon">⚙</span>Quản trị hệ thống<span class="nav-arrow">›</span></a>
+ <div class="side-sep"></div>
+ <button class="nav-item" onclick="alert('Vui lòng liên hệ cán bộ quản trị hệ thống để được hỗ trợ.')"><span class="nav-icon">◉</span>Hỗ trợ kỹ thuật</button>
+ <button class="nav-item" onclick="alert('Chức năng đăng xuất sẽ được tích hợp khi xây dựng hệ thống tài khoản.')"><span class="nav-icon">⇥</span>Đăng xuất</button>
+ <div class="side-note">ĐOÀN KẾT · KỶ LUẬT<br>RA SỨC THI ĐUA<br>QUYẾT THẮNG</div>
+</aside>
+
+<main class="main">
+<section class="stats">
+ <div class="stat"><div class="stat-icon">▤</div><div class="stat-label">Tài liệu, tư liệu</div><div class="stat-number" id="documentsCount">Đang tải...</div><div class="stat-sub">Tài liệu</div></div>
+ <div class="stat"><div class="stat-icon">▦</div><div class="stat-label">Hoạt động năm 2026</div><div class="stat-number" id="plansCount">Đang tải...</div><div class="stat-sub">Kế hoạch</div></div>
+ <div class="stat"><div class="stat-icon">▧</div><div class="stat-label">Hình ảnh, video</div><div class="stat-number" id="mediaCount">Đang tải...</div><div class="stat-sub">Tư liệu</div></div>
+ <div class="stat"><div class="stat-icon">▥</div><div class="stat-label">Báo cáo</div><div class="stat-number" id="reportsCount">Đang tải...</div><div class="stat-sub">Tổng số báo cáo đã lưu</div></div>
+</section>
+
+<section class="content-grid">
+ <div class="panel">
+  <div class="panel-head"><div class="panel-title"><span>★</span>Tin tức - Sự kiện nổi bật</div><a class="more" href="tintuc.html">Xem thêm →</a></div>
+  <div class="news-layout">
+   <article class="feature-news">
+    <a class="feature-image" id="homeFeatureImage" href="#" target="_blank" rel="noopener noreferrer" aria-label="Đọc tin nổi bật"></a>
+    <h3><a id="homeFeatureTitle" href="#" target="_blank">Đang tải tin tức...</a></h3>
+    <div class="meta"><span>▣ <span id="homeFeatureDate">Đang cập nhật</span></span><span>◉ Báo Quân đội nhân dân</span></div>
+   </article>
+   <div class="news-list">
+    <article class="news-item"><a class="thumb" id="homeNewsImage1" href="#" target="_blank"></a><div><h4><a id="homeNewsTitle1" href="#" target="_blank">Đang tải tin tức...</a></h4><div class="meta">◷ <span id="homeNewsDate1">Đang cập nhật</span></div></div></article>
+    <article class="news-item"><a class="thumb" id="homeNewsImage2" href="#" target="_blank"></a><div><h4><a id="homeNewsTitle2" href="#" target="_blank">Đang tải tin tức...</a></h4><div class="meta">◷ <span id="homeNewsDate2">Đang cập nhật</span></div></div></article>
+    <article class="news-item"><a class="thumb" id="homeNewsImage3" href="#" target="_blank"></a><div><h4><a id="homeNewsTitle3" href="#" target="_blank">Đang tải tin tức...</a></h4><div class="meta">◷ <span id="homeNewsDate3">Đang cập nhật</span></div></div></article>
+   </div>
+  </div>
+ </div>
+ <div class="panel calendar">
+  <div class="panel-head"><div class="panel-title"><span>🗓️</span>Lịch hoạt động</div><div class="month-controls"><button aria-label="Tháng trước" onclick="changeMonth(-1)">‹</button><button aria-label="Tháng sau" onclick="changeMonth(1)">›</button></div></div>
+  <div class="month-name" id="monthName"></div><div class="calendar-grid" id="calendarGrid"></div>
+  <div class="legend"><span><i class="dot" style="background:#1475d1"></i>Hoạt động Phòng HCM</span><span><i class="dot" style="background:#18e58a"></i>Hoạt động đơn vị</span><span><i class="dot" style="background:#f29b24"></i>Khác</span></div>
+ </div>
+</section>
+
+<section class="bottom-grid">
+ <div class="panel"><div class="panel-head"><div class="panel-title">📘 Thư viện điện tử</div><a class="more" href="thuvien.html">Xem tất cả →</a></div>
+  <div class="library-grid">
+   <a class="lib-item" href="tailieu.html"><div class="lib-icon">📕</div><strong>Tài liệu<br>tuyên truyền</strong></a>
+   <a class="lib-item" href="sachbao.html"><div class="lib-icon">📘</div><strong>Sách, Báo</strong></a>
+   <a class="lib-item" href="video.html"><div class="lib-icon">🎬</div><strong>Video<br>giáo dục</strong></a>
+   <a class="lib-item" href="tulieulichsu.html"><div class="lib-icon">🖼️</div><strong>Tư liệu<br>lịch sử</strong></a>
+   <a class="lib-item" href="loibachongayxua.html"><div class="lib-icon">📜</div><strong>Lời Bác Hồ dạy<br>ngày này năm xưa</strong></a>
+   <a class="lib-item" href="truyenthannoibo.html"><div class="lib-icon">📻</div><strong>Truyền thanh<br>nội bộ</strong></a>
+  </div>
+ </div>
+ <div class="panel"><div class="panel-head"><div class="panel-title">📊 Kết quả hoạt động</div><a class="more" href="thongke.html">Xem chi tiết →</a></div>
+  <div class="chart" id="homeResultChart"><div style="width:100%;text-align:center;color:#d8edff;padding:45px 5px">Đang tải số liệu...</div></div>
+ </div>
+ <div class="panel"><div class="panel-head"><div class="panel-title">🔗 Liên kết nhanh</div></div>
+  <div class="quick-grid">
+   <a class="quick" href="hoctapbac.html"><span>🎓</span>Học tập và làm theo Bác</a>
+   <a class="quick" href="phapluat.html"><span>🛡️</span>Pháp luật Quân đội</a>
+   <a class="quick" href="thidu.html"><span>🏆</span>Phong trào thi đua</a>
+   <a class="quick" href="thongtin.html"><span>⚙️</span>Thông tin đơn vị</a>
+  </div>
+ </div>
+</section>
+<div class="footer">★ TIỂU ĐOÀN 5 – TRUNG ĐOÀN 20 – SƯ ĐOÀN 330 – QUÂN KHU 9 ★</div>
+</main>
+</div>
+
+<script>
+function updateClock(){
+ const d=new Date(),days=['Chủ nhật','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'];
+ document.getElementById('datetime').textContent='▦ '+days[d.getDay()]+', '+d.toLocaleDateString('vi-VN')+' | '+d.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
+}
+updateClock();setInterval(updateClock,30000);
+
+let today=new Date(),shown=new Date(today.getFullYear(),today.getMonth(),1);
+function renderCalendar(){
+ const y=shown.getFullYear(),m=shown.getMonth(),names=['Tháng Một','Tháng Hai','Tháng Ba','Tháng Tư','Tháng Năm','Tháng Sáu','Tháng Bảy','Tháng Tám','Tháng Chín','Tháng Mười','Tháng Mười Một','Tháng Mười Hai'];
+ document.getElementById('monthName').textContent=names[m]+' '+y;
+ const grid=document.getElementById('calendarGrid');grid.innerHTML='';
+ ['T2','T3','T4','T5','T6','T7','CN'].forEach(n=>{const e=document.createElement('div');e.className='day-name';e.textContent=n;grid.appendChild(e)});
+ const first=(new Date(y,m,1).getDay()+6)%7,count=new Date(y,m+1,0).getDate(),prev=new Date(y,m,0).getDate();
+ for(let i=0;i<42;i++){let day,cls='day';if(i<first){day=prev-first+i+1;cls+=' muted'}else if(i>=first+count){day=i-first-count+1;cls+=' muted'}else{day=i-first+1;if(y===today.getFullYear()&&m===today.getMonth()&&day===today.getDate())cls+=' today';if([5,11,20,25].includes(day))cls+=' event'}
+ const e=document.createElement('div');e.className=cls;e.textContent=day;grid.appendChild(e)}
+}
+function changeMonth(n){shown.setMonth(shown.getMonth()+n);renderCalendar()}
+renderCalendar();
+
+const DOCUMENTS_API="https://script.google.com/macros/s/AKfycbwgRRXstEmITDsXwxrV_sScxHSx6ewYzp38I8LfB0EWweMxXOT7xjVoZ-vwEPtmaNPU5A/exec";
+const PLANS_API="https://script.google.com/macros/s/AKfycbyBmTTnc6DVtVKrTX5vxlBqOk1HfjG8FeE4jFJGVbmmpBgVL5maLezMjNPN6U6ksVU0mA/exec";
+const REPORTS_API="https://script.google.com/macros/s/AKfycbzuXl_jo0SC3m7IfuorvU7MFR6zZ5FKw5GrzOPFle1fXRam_w1sDbdLn5biHsDSyHVOgg/exec";
+const MEDIA_API="https://script.google.com/macros/s/AKfycbyXQAQwDqsFsAw4BrY7MCC5tlJ19uuXyZGbZEGTAchy8RM4Yk3c_l_zR9sye429CWi1Xg/exec";
+window.homeChartData={documents:null,plans:null,media:null,reports:null};
+function renderHomeChart(){
+ const chart=document.getElementById("homeResultChart");if(!chart)return;
+ const data=window.homeChartData,values=[data.documents,data.plans,data.media,data.reports];
+ if(values.some(v=>v===null))return;
+ if(values.some(v=>v==="error")){chart.innerHTML='<div style="width:100%;text-align:center;color:#ffd0d0;padding:45px 5px">Không tải đủ dữ liệu biểu đồ. Vui lòng tải lại trang.</div>';return}
+ const items=[{name:"Tài liệu",value:data.documents,color:"#2474d2"},{name:"Kế hoạch",value:data.plans,color:"#19a45b"},{name:"Hình ảnh,<br>video",value:data.media,color:"#f07824"},{name:"Báo cáo",value:data.reports,color:"#a855f7"}];
+ const maxValue=Math.max(...items.map(item=>item.value),1);chart.innerHTML="";
+ items.forEach(item=>{const wrap=document.createElement("div");wrap.className="bar-wrap";const number=document.createElement("div");number.className="bar-value";number.textContent=item.value.toLocaleString("vi-VN");const bar=document.createElement("div");bar.className="bar";bar.style.background=item.color;bar.style.height=(item.value===0?0:Math.max(5,item.value/maxValue*105))+"px";const label=document.createElement("div");label.className="bar-label";label.innerHTML=item.name;wrap.append(number,bar,label);chart.appendChild(wrap)})
+}
+function setHomeChartData(key,value){window.homeChartData[key]=value;renderHomeChart()}
+window.homeDocumentsCallback=function(data){const el=document.getElementById("documentsCount");if(data&&data.success&&Array.isArray(data.documents)){const total=data.documents.length;el.textContent=total.toLocaleString("vi-VN");setHomeChartData("documents",total)}else{el.textContent="Không tải được";setHomeChartData("documents","error")}};
+window.homePlansCallback=function(data){const el=document.getElementById("plansCount");if(data&&data.success&&Array.isArray(data.plans)){const total=data.plans.filter(plan=>{const date=String(plan.startDate||plan.date||"").trim();return /^2026-/.test(date)||/^\d{1,2}\/\d{1,2}\/2026$/.test(date)}).length;el.textContent=total.toLocaleString("vi-VN");setHomeChartData("plans",total)}else{el.textContent="Không tải được";setHomeChartData("plans","error");console.error("Lỗi dữ liệu kế hoạch:",data)}};
+window.homeReportsCallback=function(data){const el=document.getElementById("reportsCount");if(data&&data.success){const total=Number(data.total||0);el.textContent=total.toLocaleString("vi-VN");setHomeChartData("reports",total)}else{el.textContent="Không tải được";setHomeChartData("reports","error")}};
+window.homeMediaCallback=function(data){const el=document.getElementById("mediaCount");if(data&&data.success){const total=Number(data.total||0);el.textContent=total.toLocaleString("vi-VN");setHomeChartData("media",total)}else{el.textContent="Không tải được";setHomeChartData("media","error")}};
+function loadHomeStats(apiUrl,action,callbackName){
+ const script=document.createElement("script");script.src=apiUrl+"?action="+encodeURIComponent(action)+"&callback="+encodeURIComponent(callbackName)+"&t="+Date.now();
+ script.onerror=function(){const map={homeDocumentsCallback:["documentsCount","documents"],homePlansCallback:["plansCount","plans"],homeReportsCallback:["reportsCount","reports"],homeMediaCallback:["mediaCount","media"]};const item=map[callbackName];if(item){document.getElementById(item[0]).textContent="Không tải được";setHomeChartData(item[1],"error")}};
+ document.head.appendChild(script)
+}
+loadHomeStats(DOCUMENTS_API,"list","homeDocumentsCallback");
+loadHomeStats(PLANS_API,"plans","homePlansCallback");
+loadHomeStats(REPORTS_API,"reports","homeReportsCallback");
+loadHomeStats(MEDIA_API,"media","homeMediaCallback");
+</script>
+
+<script>
+const tenDangNhap=sessionStorage.getItem("tenDangNhap");
+if(tenDangNhap)document.querySelector(".user-name").textContent=tenDangNhap;
+const RSS_API="https://script.google.com/macros/s/AKfycbyWpt_wLVPeXzDpi1wxHFp8kRiNgPg9Udl_r1NDZlTU8HSMu55nyU5LXcAtqDdz8TZGqg/exec";
+function formatNewsDate(dateString){if(!dateString)return "";const date=new Date(dateString);if(isNaN(date.getTime()))return "";return date.toLocaleDateString("vi-VN")}
+function setNewsImage(id,item){
+ const element=document.getElementById(id);if(!element)return;
+ if(element.tagName==="IMG"){if(item.thumbnail)element.src=item.thumbnail;else element.style.display="none"}
+ else if(item.thumbnail)element.style.backgroundImage="url('"+item.thumbnail.replace(/'/g,"%27")+"')";
+ const link=element.closest("a");if(link&&item.link){link.href=item.link;link.target="_blank";link.rel="noopener noreferrer"}
+}
+function setNewsItem(titleId,dateId,imageId,item){
+ const title=document.getElementById(titleId),date=document.getElementById(dateId);
+ if(title){title.textContent=item.title||"Chưa có tiêu đề";const link=title.tagName==="A"?title:title.closest("a");if(link&&item.link){link.href=item.link;link.target="_blank";link.rel="noopener noreferrer"}}
+ if(date)date.textContent=formatNewsDate(item.pubDate);setNewsImage(imageId,item)
+}
+function homeRssCallback(data){
+ if(!data||!data.success||!data.items){console.error("Không lấy được dữ liệu tin tức.");return}
+ const news=data.items.slice(0,4);if(!news.length)return;
+ setNewsItem("homeFeatureTitle","homeFeatureDate","homeFeatureImage",news[0]);
+ for(let i=1;i<4;i++){if(!news[i])break;setNewsItem("homeNewsTitle"+i,"homeNewsDate"+i,"homeNewsImage"+i,news[i])}
+}
+function loadHomeNews(){const script=document.createElement("script");script.src=RSS_API+"?callback=homeRssCallback&t="+Date.now();script.onerror=function(){console.error("Không thể kết nối API tin tức.")};document.body.appendChild(script)}
+loadHomeNews();
+</script>
+
+<script>
+const music=document.getElementById("backgroundMusic"),musicButton=document.getElementById("musicButton");music.volume=.4;
+window.addEventListener("load",function(){music.play().then(()=>{musicButton.innerHTML="🔊 Tắt nhạc"}).catch(()=>{musicButton.innerHTML="▶️ Bật nhạc"})});
+function toggleMusic(){if(music.paused){music.play().then(()=>{musicButton.innerHTML="🔊 Tắt nhạc"}).catch(()=>{alert("Không phát được nhạc. Hãy kiểm tra file nhacnen.mp3!")})}else{music.pause();musicButton.innerHTML="▶️ Bật nhạc"}}
+music.addEventListener("error",function(){musicButton.innerHTML="❌ Không tìm thấy nhạc"});
+</script>
+</body>
+</html>

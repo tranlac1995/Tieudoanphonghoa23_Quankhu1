@@ -1,0 +1,25 @@
+
+{
+  "id": "/Tieudoan177_Trungdoan282/",
+  "name": "Phòng Hồ Chí Minh - Tiểu đoàn 177 - Trung đoàn 282",
+  "short_name": "Tiểu đoàn 2",
+  "description": "Ứng dụng Phòng Hồ Chí Minh - Tiểu đoàn 177 - Trung đoàn 282",
+  "start_url": "/Tieudoan177_Trungdoan282/",
+  "scope": "/Tieudoan177_Trungdoan282/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#123b65",
+"icons": [
+  {
+    "src": "./icon-192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "./icon-512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }
+ ]
+}
